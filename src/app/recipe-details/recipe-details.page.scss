@@ -1,0 +1,158 @@
+.details-page {
+  --background: #f7f5ef;
+}
+
+.recipe-detail {
+  width: min(1060px, calc(100% - 2rem));
+  margin: 2rem auto 4rem;
+}
+
+.detail-hero {
+  display: grid;
+  min-height: 320px;
+  overflow: hidden;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  border-radius: 22px;
+  background: #eae8dc;
+  box-shadow: 0 12px 32px rgb(42 41 33 / 8%);
+}
+
+.detail-hero > img {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+}
+
+.detail-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+}
+
+.eyebrow {
+  margin: 0 0 0.7rem;
+  color: #77744f;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+}
+
+.detail-title h1 {
+  margin: 0;
+  color: #292b22;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2rem, 5vw, 3.7rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.recipe-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 1rem;
+}
+
+.recipe-meta ion-chip {
+  margin: 0;
+  --background: #f9f8f2;
+  --color: #4a503d;
+}
+
+.detail-content {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.75fr) minmax(0, 1.25fr);
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.ingredient-panel,
+.instructions-panel {
+  padding: clamp(1.25rem, 4vw, 2rem);
+  border: 1px solid rgb(48 51 39 / 7%);
+  border-radius: 18px;
+  background: #fffefa;
+  box-shadow: 0 4px 16px rgb(42 41 33 / 4%);
+}
+
+.ingredient-panel h2,
+.instructions-panel h2 {
+  margin: 0 0 1rem;
+  color: #292b22;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.ingredient-panel ul {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ingredient-panel li {
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid #eeede6;
+  color: #515349;
+  line-height: 1.45;
+}
+
+.empty-ingredients,
+.instructions {
+  margin: 0;
+  color: #55574e;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+.details-state {
+  display: flex;
+  min-height: 55vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: #5b5e53;
+  text-align: center;
+}
+
+.details-state h2 {
+  margin: 0 0 0.5rem;
+  color: #303226;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.details-state p {
+  max-width: 34rem;
+  line-height: 1.6;
+}
+
+.details-state ion-spinner {
+  color: #64734f;
+}
+
+@media (max-width: 680px) {
+  .recipe-detail {
+    width: min(100% - 1.25rem, 560px);
+    margin-top: 0.75rem;
+  }
+
+  .detail-hero,
+  .detail-content {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-hero > img {
+    min-height: 0;
+    max-height: 340px;
+    aspect-ratio: 4 / 3;
+  }
+}

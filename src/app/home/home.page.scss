@@ -1,27 +1,217 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.home-page {
+  --background: #f7f5ef;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.home-hero {
+  display: grid;
+  min-height: min(680px, calc(100vh - 56px));
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
+  align-items: center;
+  gap: 2rem;
+  padding: clamp(2.5rem, 8vw, 6rem) max(1.5rem, calc((100% - 1120px) / 2));
+  background:
+    radial-gradient(ellipse at 75% 30%, rgb(255 255 255 / 54%), transparent 34%),
+    linear-gradient(125deg, #f3d9bd, #f8ebd9 55%, #e8eee0);
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+}
 
-  color: #8c8c8c;
+.eyebrow {
+  margin: 0 0 1rem;
+  color: #77744f;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.16em;
+}
 
+.hero-copy h1 {
   margin: 0;
+  color: #292b22;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
 }
 
-#container a {
-  text-decoration: none;
+.hero-copy h1 span {
+  color: #73805e;
+  font-style: italic;
+}
+
+.intro {
+  max-width: 32rem;
+  margin: 1.5rem 0 1.75rem;
+  color: #54564d;
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.15rem;
+}
+
+.explore-button {
+  min-height: 48px;
+  margin: 0;
+  --background: #65744f;
+  --background-hover: #526141;
+  --border-radius: 999px;
+  --color: #fffefa;
+  font-weight: 700;
+}
+
+.explore-button span,
+.home-note ion-button span {
+  margin-left: 0.55rem;
+}
+
+.about-link {
+  color: #41463a;
+  font-size: 0.94rem;
+  font-weight: 700;
+  text-decoration-color: #9c9b84;
+  text-underline-offset: 4px;
+}
+
+.hero-art {
+  position: relative;
+  display: grid;
+  min-height: 360px;
+  place-items: center;
+}
+
+.plate {
+  display: grid;
+  width: min(32vw, 390px);
+  min-width: 260px;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgb(95 93 71 / 12%);
+  border-radius: 50%;
+  background: #fffefa;
+  box-shadow:
+    0 24px 60px rgb(75 60 40 / 13%),
+    inset 0 0 0 14px #f7f5ef,
+    inset 0 0 0 15px rgb(95 93 71 / 10%);
+  transform: rotate(-8deg);
+}
+
+.plate-center {
+  display: flex;
+  width: 63%;
+  height: 63%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 25%, #f6e5bb 0 7%, transparent 8%),
+    radial-gradient(circle at 67% 36%, #d57c4d 0 11%, transparent 12%),
+    radial-gradient(circle at 42% 65%, #87956b 0 15%, transparent 16%),
+    radial-gradient(circle at 70% 73%, #e4b75f 0 12%, transparent 13%),
+    #e8d5b6;
+  box-shadow: inset 0 0 0 9px rgb(255 255 255 / 44%);
+  transform: rotate(8deg);
+}
+
+.plate-leaf {
+  color: #fffefa;
+  font-size: 2.5rem;
+  line-height: 1;
+  text-shadow: 0 2px 6px rgb(39 52 28 / 25%);
+}
+
+.plate-text {
+  margin-top: 0.2rem;
+  color: #fffefa;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.05;
+  text-align: center;
+  text-shadow: 0 2px 6px rgb(39 52 28 / 35%);
+}
+
+.art-caption {
+  position: absolute;
+  right: 2%;
+  bottom: 8%;
+  color: #696a5c;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.4;
+  transform: rotate(-5deg);
+}
+
+.home-note {
+  display: flex;
+  width: min(1120px, calc(100% - 3rem));
+  min-height: 110px;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto;
+  color: #4f5247;
+}
+
+.note-mark {
+  color: #a56d46;
+  font-size: 1.8rem;
+}
+
+.home-note p {
+  flex: 1;
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+}
+
+.home-note ion-button {
+  --color: #65744f;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .home-hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 3.5rem 1.25rem 1.5rem;
+  }
+
+  .hero-art {
+    min-height: 260px;
+  }
+
+  .plate {
+    width: 250px;
+    min-width: 0;
+  }
+
+  .art-caption {
+    right: 5%;
+    bottom: 4%;
+  }
+
+  .home-note {
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    padding: 1.25rem 0;
+  }
+
+  .home-note p {
+    flex-basis: calc(100% - 3rem);
+  }
+
+  .home-note ion-button {
+    margin-left: 2.45rem;
+  }
 }

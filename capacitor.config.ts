@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'mealExplorer',
+  appId: 'com.mealexplorer.app',
+  appName: 'Meal Explorer',
   webDir: 'www'
 };
 

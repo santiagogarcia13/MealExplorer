@@ -1,0 +1,80 @@
+<app-page-header title="Recipes"></app-page-header>
+
+<ion-content class="recipes-page">
+  <section class="recipes-hero">
+    <p class="eyebrow">FIND YOUR NEXT FAVORITE</p>
+    <h1>What sounds good?</h1>
+    <p class="hero-copy">
+      Search a world of dishes and find something delicious to make.
+    </p>
+    <ion-searchbar
+      class="recipe-search"
+      placeholder="Try pasta, curry, or tacos"
+      aria-label="Search recipes"
+      [value]="query()"
+      [debounce]="400"
+      (ionInput)="onSearch($event)">
+    </ion-searchbar>
+  </section>
+
+  <main class="results-shell">
+    <div class="results-heading">
+      <div>
+        <p class="eyebrow">THE MEALDB COLLECTION</p>
+        <h2>{{ query() ? 'Recipes for ' + query() : 'Search recipes' }}</h2>
+      </div>
+      @if (!loading() && !errorMsg() && meals().length > 0) {
+        <span class="result-count">{{ meals().length }} recipes</span>
+      }
+    </div>
+
+    @if (loading()) {
+      <div class="state-card" role="status" aria-live="polite">
+        <ion-spinner name="crescent"></ion-spinner>
+        <p>Finding delicious ideas...</p>
+      </div>
+    } @else if (errorMsg()) {
+      <div class="state-card error-card" role="alert">
+        <span class="state-icon" aria-hidden="true">!</span>
+        <h3>We couldn't load recipes</h3>
+        <p>{{ errorMsg() }}</p>
+        <ion-button fill="outline" (click)="search()">Try again</ion-button>
+      </div>
+    } @else if (!query()) {
+      <div class="state-card">
+        <h3>Start with an ingredient or dish</h3>
+        <p>Try searching for something like “salmon” or “vegetarian”.</p>
+      </div>
+    } @else if (meals().length === 0) {
+      <div class="state-card">
+        <h3>No recipes found for “{{ query() }}”</h3>
+        <p>Try another dish name or ingredient.</p>
+      </div>
+    } @else {
+      <div class="recipe-grid">
+        @for (meal of meals(); track meal.idMeal) {
+          <a class="recipe-card" [routerLink]="['/recipe', meal.idMeal]">
+            <div class="recipe-image">
+              <img
+                [src]="meal.strMealThumb"
+                [alt]="meal.strMeal"
+                loading="eager"
+                decoding="async"
+              />
+              @if (meal.strCategory) {
+                <span class="recipe-tag">{{ meal.strCategory }}</span>
+              }
+            </div>
+            <div class="recipe-info">
+              <h3>{{ meal.strMeal }}</h3>
+              @if (meal.strArea) {
+                <p>{{ meal.strArea }} cuisine</p>
+              }
+              <span class="view-recipe">View recipe <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+        }
+      </div>
+    }
+  </main>
+</ion-content>

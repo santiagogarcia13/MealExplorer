@@ -1,0 +1,61 @@
+<app-page-header title="Recipe Details"></app-page-header>
+
+<ion-content class="details-page">
+  @if (loading()) {
+    <div class="details-state" role="status" aria-live="polite">
+      <ion-spinner name="crescent"></ion-spinner>
+      <p>Loading your recipe...</p>
+    </div>
+  } @else if (errorMsg()) {
+    <div class="details-state" role="alert">
+      <h2>Recipe unavailable</h2>
+      <p>{{ errorMsg() }}</p>
+      <ion-button fill="outline" (click)="loadMeal()">Try again</ion-button>
+    </div>
+  } @else if (meal(); as currentMeal) {
+    <div class="recipe-detail">
+      <div class="detail-hero">
+        <img [src]="currentMeal.strMealThumb" [alt]="currentMeal.strMeal" />
+        <div class="detail-title">
+          <p class="eyebrow">A RECIPE TO LOVE</p>
+          <h1>{{ currentMeal.strMeal }}</h1>
+          <div class="recipe-meta">
+            @if (currentMeal.strCategory) {
+              <ion-chip>{{ currentMeal.strCategory }}</ion-chip>
+            }
+            @if (currentMeal.strArea) {
+              <ion-chip>{{ currentMeal.strArea }} cuisine</ion-chip>
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-content">
+        <section class="ingredient-panel">
+          <p class="eyebrow">GET READY</p>
+          <h2>Ingredients</h2>
+          @if (ingredients().length > 0) {
+            <ul>
+              @for (item of ingredients(); track $index) {
+                <li>{{ item }}</li>
+              }
+            </ul>
+          } @else {
+            <p class="empty-ingredients">No ingredients were provided for this recipe.</p>
+          }
+        </section>
+
+        <section class="instructions-panel">
+          <p class="eyebrow">LET'S COOK</p>
+          <h2>Instructions</h2>
+          <p class="instructions">{{ currentMeal.strInstructions }}</p>
+        </section>
+      </div>
+    </div>
+  } @else {
+    <div class="details-state">
+      <h2>Recipe not found</h2>
+      <p>We couldn't find that recipe. It may have been removed.</p>
+    </div>
+  }
+</ion-content>

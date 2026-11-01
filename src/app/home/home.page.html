@@ -1,21 +1,35 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> Blank </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-page-header title="Meal Explorer" [showBackButton]="false"></app-page-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="home-page">
+  <section class="home-hero">
+    <div class="hero-copy">
+      <p class="eyebrow">GOOD FOOD, GOOD MOOD</p>
+      <h1>Make something<br /><span>wonderful.</span></h1>
+      <p class="intro">
+        Discover dishes from around the world, find your next favorite, and
+        bring it to life in your own kitchen.
+      </p>
+      <div class="hero-actions">
+        <ion-button routerLink="/recipes" class="explore-button">
+          Explore recipes <span aria-hidden="true">→</span>
+        </ion-button>
+        <a routerLink="/about" class="about-link">Meet the team</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="plate">
+        <div class="plate-center">
+          <span class="plate-leaf">✳</span>
+          <span class="plate-text">Made<br />with care</span>
+        </div>
+      </div>
+      <span class="art-caption">A little inspiration<br />for your table</span>
+    </div>
+  </section>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>
-      Start with Ionic
-      <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a>
-    </p>
-  </div>
+  <section class="home-note">
+    <span class="note-mark" aria-hidden="true">✦</span>
+    <p>From a quick weeknight dinner to a new weekend adventure.</p>
+    <ion-button fill="clear" routerLink="/recipes">Find your dish <span aria-hidden="true">→</span></ion-button>
+  </section>
 </ion-content>

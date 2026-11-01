@@ -1,0 +1,264 @@
+.about-page {
+  --background: #f7f5ef;
+}
+
+.about-shell {
+  width: min(1120px, calc(100% - 2.5rem));
+  margin: 0 auto;
+  padding-bottom: 4rem;
+}
+
+.about-hero {
+  display: grid;
+  min-height: 410px;
+  grid-template-columns: minmax(0, 1fr) minmax(270px, 0.72fr);
+  align-items: center;
+  gap: 2rem;
+  padding: clamp(2.25rem, 7vw, 4.5rem) 0;
+  border-bottom: 1px solid #e6e3d9;
+}
+
+.about-intro {
+  max-width: 650px;
+}
+
+.eyebrow {
+  margin: 0 0 0.8rem;
+  color: #77744f;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.15em;
+}
+
+.about-intro h1 {
+  margin: 0;
+  color: #292b22;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.8rem, 6.5vw, 5.3rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 0.99;
+}
+
+.about-intro h1 span {
+  color: #73805e;
+  font-style: italic;
+}
+
+.about-description {
+  max-width: 34rem;
+  margin: 1.25rem 0 1.5rem;
+  color: #5a5c51;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.about-art {
+  position: relative;
+  display: grid;
+  min-height: 300px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 24px;
+  background: linear-gradient(140deg, #f3d9bd, #e8eee0);
+}
+
+.art-circle {
+  width: min(58vw, 250px);
+  aspect-ratio: 1;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 0.1rem;
+  border: 1px solid rgb(95 93 71 / 12%);
+  border-radius: 50%;
+  background: #fffefa;
+  box-shadow: 0 20px 45px rgb(75 60 40 / 12%), inset 0 0 0 12px #f7f5ef;
+  transform: rotate(-8deg);
+}
+
+.art-sun {
+  color: #a56d46;
+  font-size: 2.5rem;
+}
+
+.art-script {
+  color: #65744f;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  line-height: 1.05;
+  text-align: center;
+}
+
+.team-section {
+  padding: 3rem 0 3.5rem;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.3rem;
+}
+
+.section-heading h2,
+.about-cta h2 {
+  margin: 0;
+  color: #292b22;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+.team-count {
+  padding-bottom: 0.35rem;
+  color: #77796f;
+  font-size: 0.85rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.member-card {
+  grid-column: span 2;
+  min-height: 220px;
+  padding: 1.2rem;
+  border: 1px solid rgb(48 51 39 / 7%);
+  border-radius: 18px;
+  background: #fffefa;
+  box-shadow: 0 4px 16px rgb(42 41 33 / 4%);
+}
+
+.member-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.member-card:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+.member-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #898a7e;
+}
+
+.member-number {
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+}
+
+.member-avatar {
+  display: grid;
+  width: 3.3rem;
+  height: 3.3rem;
+  margin: 1rem 0 0.9rem;
+  place-items: center;
+  border-radius: 50%;
+  background: #e8eee0;
+  color: #596847;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.member-card h3 {
+  margin: 0;
+  color: #303226;
+  font-size: 1.05rem;
+}
+
+.member-card p {
+  margin: 0.45rem 0 0;
+  color: #73756a;
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.about-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border-radius: 20px;
+  background: #e8eee0;
+}
+
+.about-cta .eyebrow {
+  margin-bottom: 0.45rem;
+}
+
+.explore-button {
+  min-height: 48px;
+  margin: 0;
+  --background: #65744f;
+  --background-hover: #526141;
+  --border-radius: 999px;
+  --color: #fffefa;
+  font-weight: 700;
+}
+
+.explore-button span {
+  margin-left: 0.55rem;
+}
+
+@media (max-width: 800px) {
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .member-card,
+  .member-card:nth-child(4),
+  .member-card:nth-child(5) {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .about-shell {
+    width: calc(100% - 2rem);
+  }
+
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding-top: 2.5rem;
+  }
+
+  .about-art {
+    min-height: 250px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+  }
+
+  .team-count {
+    padding-top: 0.3rem;
+    text-align: right;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .member-card {
+    min-height: 0;
+    padding: 1rem;
+  }
+
+  .about-cta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

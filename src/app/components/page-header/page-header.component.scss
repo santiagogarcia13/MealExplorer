@@ -1,0 +1,34 @@
+:host {
+  display: block;
+}
+
+.page-header {
+  box-shadow: none;
+}
+
+ion-toolbar {
+  --background: #f7f5ef;
+  --border-color: transparent;
+  --color: #292b22;
+  --min-height: 68px;
+}
+
+ion-buttons {
+  padding-inline-start: max(0.5rem, calc((100vw - 1120px) / 2));
+}
+
+ion-back-button {
+  --color: #65744f;
+  --icon-font-size: 20px;
+  --padding-end: 0.5rem;
+  --padding-start: 0.75rem;
+}
+
+ion-title {
+  padding-inline: 1rem;
+  color: #292b22;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}

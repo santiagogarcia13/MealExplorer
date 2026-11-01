@@ -1,0 +1,225 @@
+.recipes-page {
+  --background: #f7f5ef;
+}
+
+.recipes-hero {
+  padding: clamp(2.5rem, 8vw, 5rem) max(1.25rem, calc((100% - 1120px) / 2));
+  background:
+    radial-gradient(ellipse at 85% 20%, rgb(255 255 255 / 55%), transparent 35%),
+    linear-gradient(125deg, #f3d9bd, #f8ebd9 55%, #e8eee0);
+}
+
+.eyebrow {
+  margin: 0 0 0.65rem;
+  color: #77744f;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+}
+
+.recipes-hero h1 {
+  max-width: 700px;
+  margin: 0;
+  color: #292b22;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.hero-copy {
+  max-width: 35rem;
+  margin: 1rem 0 1.5rem;
+  color: #54564d;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.recipe-search {
+  max-width: 620px;
+  padding: 0;
+  --background: #fffefa;
+  --border-radius: 14px;
+  --box-shadow: 0 8px 26px rgb(65 49 30 / 9%);
+  --color: #292b22;
+  --placeholder-color: #77796f;
+}
+
+.results-shell {
+  width: min(1120px, calc(100% - 2.5rem));
+  margin: 0 auto;
+  padding: 2.5rem 0 4rem;
+}
+
+.results-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.results-heading h2 {
+  margin: 0;
+  color: #292b22;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+}
+
+.result-count {
+  padding-bottom: 0.35rem;
+  color: #74766c;
+  font-size: 0.9rem;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 235px), 1fr));
+  gap: 1.15rem;
+}
+
+.recipe-card {
+  overflow: hidden;
+  border: 1px solid rgb(48 51 39 / 7%);
+  border-radius: 18px;
+  background: #fffefa;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgb(42 41 33 / 4%);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.recipe-card:hover,
+.recipe-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgb(42 41 33 / 12%);
+}
+
+.recipe-card:focus-visible {
+  outline: 3px solid #71815d;
+  outline-offset: 3px;
+}
+
+.recipe-image {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #e7e5dc;
+}
+
+.recipe-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+.recipe-card:hover .recipe-image img {
+  transform: scale(1.04);
+}
+
+.recipe-tag {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  padding: 0.38rem 0.68rem;
+  border-radius: 999px;
+  background: rgb(255 254 250 / 94%);
+  color: #424a35;
+  font-size: 0.73rem;
+  font-weight: 700;
+}
+
+.recipe-info {
+  padding: 1rem 1rem 1.1rem;
+}
+
+.recipe-info h3 {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0;
+  color: #292b22;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.35;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.recipe-info p {
+  margin: 0.4rem 0 0;
+  color: #77796f;
+  font-size: 0.85rem;
+}
+
+.view-recipe {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.9rem;
+  color: #64734f;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.state-card {
+  display: flex;
+  min-height: 220px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border: 1px dashed #d5d4c9;
+  border-radius: 18px;
+  background: rgb(255 254 250 / 70%);
+  color: #5b5e53;
+  text-align: center;
+}
+
+.state-card ion-spinner {
+  color: #64734f;
+}
+
+.state-card h3 {
+  margin: 0.9rem 0 0.35rem;
+  color: #303226;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.45rem;
+  font-weight: 500;
+}
+
+.state-card p {
+  max-width: 32rem;
+  margin: 0.3rem 0 0;
+  line-height: 1.55;
+}
+
+.error-card .state-icon {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border-radius: 50%;
+  background: #f7e4dc;
+  color: #9c503b;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.error-card ion-button {
+  margin-top: 1rem;
+  --border-color: #64734f;
+  --color: #526141;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recipe-card,
+  .recipe-image img {
+    transition: none;
+  }
+}

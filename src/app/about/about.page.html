@@ -1,0 +1,55 @@
+<app-page-header title="About Our Group"></app-page-header>
+
+<ion-content class="about-page">
+  <main class="about-shell">
+    <section class="about-hero">
+      <div class="about-intro">
+        <p class="eyebrow">A LITTLE ABOUT US</p>
+        <h1>Good food is better <span>shared.</span></h1>
+        <p class="about-description">{{ description }}</p>
+      </div>
+      <div class="about-art" aria-hidden="true">
+        <div class="art-circle">
+          <span class="art-sun">✳</span>
+          <span class="art-script">made<br />together</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="team-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE PEOPLE BEHIND THE PROJECT</p>
+          <h2>Meet our team</h2>
+        </div>
+        <span class="team-count">{{ members.length }} collaborators</span>
+      </div>
+
+      <div class="team-grid">
+        @for (member of members; track member.name; let index = $index) {
+          <article class="member-card">
+            <div class="member-topline">
+              <span class="member-number">0{{ index + 1 }}</span>
+              <span class="member-spark" aria-hidden="true">✦</span>
+            </div>
+            <div class="member-avatar" aria-hidden="true">
+              {{ member.name.slice(0, 1) }}
+            </div>
+            <h3>{{ member.name }}</h3>
+            <p>{{ member.role }}</p>
+          </article>
+        }
+      </div>
+    </section>
+
+    <section class="about-cta">
+      <div>
+        <p class="eyebrow">READY TO FIND A NEW FAVORITE?</p>
+        <h2>Let's get cooking.</h2>
+      </div>
+      <ion-button routerLink="/recipes" class="explore-button">
+        Explore recipes <span aria-hidden="true">→</span>
+      </ion-button>
+    </section>
+  </main>
+</ion-content>
