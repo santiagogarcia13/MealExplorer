@@ -4,9 +4,13 @@
   <main class="about-shell">
     <section class="about-hero">
       <div class="about-intro">
-        <p class="eyebrow">A LITTLE ABOUT US</p>
-        <h1>Good food is better <span>shared.</span></h1>
+        <p class="eyebrow">ABOUT THE PROJECT</p>
+        <h1>{{ projectTitle }}</h1>
         <p class="about-description">{{ description }}</p>
+        <p class="course-line">
+          <span>COURSE / YEAR / SECTION</span>
+          <strong>{{ course }}</strong>
+        </p>
       </div>
       <div class="about-art" aria-hidden="true">
         <div class="art-circle">
@@ -27,17 +31,15 @@
 
       <div class="team-grid">
         @for (member of members; track member.name; let index = $index) {
-          <article class="member-card">
-            <div class="member-topline">
-              <span class="member-number">0{{ index + 1 }}</span>
-              <span class="member-spark" aria-hidden="true">✦</span>
-            </div>
-            <div class="member-avatar" aria-hidden="true">
-              {{ member.name.slice(0, 1) }}
-            </div>
-            <h3>{{ member.name }}</h3>
-            <p>{{ member.role }}</p>
-          </article>
+        <article class="member-card">
+          <div class="member-topline">
+            <span class="member-number">0{{ index + 1 }}</span>
+            <span class="member-spark" aria-hidden="true">✦</span>
+          </div>
+          <div class="member-avatar" aria-hidden="true">{{ member.name.slice(0, 1) }}</div>
+          <h3>{{ member.name }}</h3>
+          <p>{{ member.role }}</p>
+        </article>
         }
       </div>
     </section>

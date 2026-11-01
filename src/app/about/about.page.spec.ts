@@ -24,4 +24,17 @@ describe('AboutPage', () => {
   it('should show five team members', () => {
     expect(component.members).toHaveLength(5);
   });
+
+  it('should show the project details and course section', () => {
+    const page = fixture.nativeElement as HTMLElement;
+
+    expect(page.textContent).toContain('MealExplorer');
+    expect(page.textContent).toContain('TheMealDB public API');
+    expect(page.textContent).toContain('BSIT 3-F');
+  });
+
+  it('should include a contribution for every team member', () => {
+    expect(component.members.every((member) => member.role.trim().length > 0)).toBe(true);
+    expect(fixture.nativeElement.textContent).toContain('Contributed to project planning and application development');
+  });
 });

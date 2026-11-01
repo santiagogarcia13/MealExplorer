@@ -53,6 +53,27 @@
   line-height: 1.7;
 }
 
+.course-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 0.8rem;
+  margin: 1.5rem 0 0;
+  color: #77796f;
+  font-size: 0.8rem;
+}
+
+.course-line span {
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+}
+
+.course-line strong {
+  color: #303226;
+  font-size: 0.95rem;
+}
+
 .about-art {
   position: relative;
   display: grid;
@@ -73,7 +94,9 @@
   border: 1px solid rgb(95 93 71 / 12%);
   border-radius: 50%;
   background: #fffefa;
-  box-shadow: 0 20px 45px rgb(75 60 40 / 12%), inset 0 0 0 12px #f7f5ef;
+  box-shadow:
+    0 20px 45px rgb(75 60 40 / 12%),
+    inset 0 0 0 12px #f7f5ef;
   transform: rotate(-8deg);
 }
 
